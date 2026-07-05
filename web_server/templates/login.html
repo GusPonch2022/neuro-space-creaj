@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuro Space - Acceso Paciente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="system-tag">CREA-J · NEURO SPACE</div>
+        <h1>NEURO SPACE</h1>
+        <h2>Acceso del paciente</h2>
+
+        <form method="POST">
+            <label>Expediente</label>
+            <input
+                type="text"
+                name="expediente"
+                placeholder="Ejemplo: NS-P0004"
+                autocomplete="off"
+                required
+            >
+
+            <label>Código de acceso</label>
+            <input
+                type="password"
+                name="codigo"
+                placeholder="Código de 8 dígitos"
+                inputmode="numeric"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <p class="login-note">
+            Ingresa el expediente y el código generado al finalizar la evaluación.
+        </p>
+    </div>
+
+</body>
+</html>

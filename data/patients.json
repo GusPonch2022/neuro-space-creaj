@@ -1,0 +1,1110 @@
+[
+    {
+        "patient_number": 1,
+        "patient_label": "Paciente 1",
+        "expediente_code": "NS-P0001",
+        "verification_code": "67936912",
+        "created_at": "2026-07-05 07:32:44",
+        "general_state": "Estable",
+        "results": {
+            "gad7_score": 4,
+            "cognitive_score": 100
+        },
+        "recommendations": [
+            "Estado estable. Mantener hábitos saludables.",
+            "Repetir evaluación de forma preventiva si es necesario."
+        ],
+        "analysis": "El paciente presenta ansiedad mínima según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo adecuado.",
+        "raw_session": {
+            "patient_number": 1,
+            "case_code": "NS-P0001",
+            "gad7_score": 4,
+            "cognitive_score": 100,
+            "analysis": "El paciente presenta ansiedad mínima según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo adecuado.",
+            "sensor_data": {
+                "bpm": null,
+                "spo2": null
+            },
+            "extra_data": {
+                "source": "screens/patient.py",
+                "history_record": {
+                    "patient_number": 1,
+                    "case_code": "NS-P0001",
+                    "date": "2026-07-05 07:32:44",
+                    "general_state": "Riesgo leve",
+                    "scores": {
+                        "intake": 12,
+                        "gad7": 4,
+                        "cognitive": 100,
+                        "sleep": 1
+                    },
+                    "alerts": [
+                        "Sueño deficiente reportado."
+                    ],
+                    "analysis": [
+                        "El paciente presenta ansiedad mínima según los datos registrados.",
+                        "La evaluación inicial muestra señales leves de malestar.",
+                        "El sueño deficiente puede estar afectando el estado emocional y la atención.",
+                        "En el área cognitiva, el resultado indica rendimiento cognitivo adecuado."
+                    ],
+                    "recommendations": [
+                        "Mantener observación del estado emocional durante el día.",
+                        "Descansar unos minutos si aparece tensión, ansiedad o cansancio mental.",
+                        "Repetir la evaluación si los síntomas aumentan.",
+                        "Mantener una rutina básica de sueño, comida e hidratación.",
+                        "Evitar acumular estrés sin pausas.",
+                        "Priorizar dormir mejor durante la noche siguiente.",
+                        "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+                        "Intentar acostarse a una hora más estable.",
+                        "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+                        "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+                        "El rendimiento cognitivo fue adecuado; mantener buenos hábitos de descanso y concentración.",
+                        "Registrar cualquier cambio importante en el historial del paciente.",
+                        "Comparar este resultado con futuras evaluaciones para observar evolución.",
+                        "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+                    ],
+                    "conclusion": "El paciente muestra señales leves de malestar. Se recomienda observación, autocuidado y repetir la evaluación si los síntomas aumentan.",
+                    "summary_text": "Paciente número 1\nCódigo de expediente: NS-P0001\n\nEstado general: Riesgo leve\n\nPuntajes:\n- Intake inicial: 12\n- GAD-7: 4\n- Cognitivo: 100%\n- Sueño: 1\n\nAlertas:\n- Sueño deficiente reportado.\n\nAnálisis:\n- El paciente presenta ansiedad mínima según los datos registrados.\n- La evaluación inicial muestra señales leves de malestar.\n- El sueño deficiente puede estar afectando el estado emocional y la atención.\n- En el área cognitiva, el resultado indica rendimiento cognitivo adecuado.\n\nRecomendaciones:\n- Mantener observación del estado emocional durante el día.\n- Descansar unos minutos si aparece tensión, ansiedad o cansancio mental.\n- Repetir la evaluación si los síntomas aumentan.\n- Mantener una rutina básica de sueño, comida e hidratación.\n- Evitar acumular estrés sin pausas.\n- Priorizar dormir mejor durante la noche siguiente.\n- Evitar pantallas, café o bebidas energéticas antes de dormir.\n- Intentar acostarse a una hora más estable.\n- Reducir ruido, luz fuerte o distracciones al momento de dormir.\n- Si el mal sueño continúa, registrarlo y comentarlo con un profesional.\n- El rendimiento cognitivo fue adecuado; mantener buenos hábitos de descanso y concentración.\n- Registrar cualquier cambio importante en el historial del paciente.\n- Comparar este resultado con futuras evaluaciones para observar evolución.\n- Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional.\n\nConclusión:\nEl paciente muestra señales leves de malestar. Se recomienda observación, autocuidado y repetir la evaluación si los síntomas aumentan.\n\nExpediente guardado correctamente",
+                    "raw_session": {
+                        "patient_number": 1,
+                        "created_at": "2026-07-05 07:30:20",
+                        "intake": {
+                            "phase": "intake_inicial",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "current_state",
+                                    "question": "¿Cómo te sientes en este momento, en una escala del uno al diez?",
+                                    "answer_text": "4–5: Mal / bajo",
+                                    "value": 5
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "recent_sleep_quality",
+                                    "question": "¿Has dormido bien las últimas noches?",
+                                    "answer_text": "Más o menos",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "sleep_hours",
+                                    "question": "¿Cuántas horas dormiste anoche, aproximadamente?",
+                                    "answer_text": "4 a 5 horas",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "stress_today",
+                                    "question": "¿Hay algo en particular que te genere estrés o ansiedad hoy?",
+                                    "answer_text": "Algo leve",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "stimulants",
+                                    "question": "¿Has consumido cafeína, alcohol, o algún estimulante en las últimas horas?",
+                                    "answer_text": "Cafeína",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "body_tension",
+                                    "question": "¿Sientes tensión física en algún lugar de tu cuerpo en este momento?",
+                                    "answer_text": "Espalda / cuerpo",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "weekly_mood",
+                                    "question": "¿Cómo describirías tu estado de ánimo general esta semana?",
+                                    "answer_text": "Cansado",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 8,
+                                    "id": "session_experience",
+                                    "question": "¿Esta es tu primera sesión con Neuro Space o ya has hecho alguna antes?",
+                                    "answer_text": "Primera sesión",
+                                    "value": 0
+                                }
+                            ],
+                            "score": 12
+                        },
+                        "gad7": {
+                            "phase": "gad7",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "nervous",
+                                    "question": "Sentirte nervioso, ansioso o con los nervios de punta.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "worry_control",
+                                    "question": "No poder dejar de preocuparte o controlar tus preocupaciones.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "too_much_worry",
+                                    "question": "Preocuparte demasiado por diferentes cosas.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "relaxing",
+                                    "question": "Tener dificultad para relajarte.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "restless",
+                                    "question": "Estar tan inquieto que te resulta difícil quedarte quieto.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "irritable",
+                                    "question": "Irritarte o enojarte con facilidad.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "afraid",
+                                    "question": "Sentir miedo, como si algo terrible pudiera pasar.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                }
+                            ],
+                            "score": 4,
+                            "level": "Ansiedad mínima"
+                        },
+                        "cognitive": {
+                            "test": "Atención por colores",
+                            "total": 8,
+                            "correct": 8,
+                            "errors": 0,
+                            "accuracy": 100.0,
+                            "avg_reaction_time": 2.12,
+                            "level": "Atención moderada"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "patient_number": 2,
+        "patient_label": "Paciente 2",
+        "expediente_code": "NS-P0002",
+        "verification_code": "65892924",
+        "created_at": "2026-07-05 07:41:11",
+        "general_state": "Riesgo moderado",
+        "results": {
+            "gad7_score": 6,
+            "cognitive_score": 50
+        },
+        "recommendations": [
+            "Tomar un descanso breve en un lugar tranquilo.",
+            "Repetir la evaluación después de un tiempo para ver si el estado mejora o empeora.",
+            "Considerar apoyo profesional si los síntomas continúan por varios días.",
+            "Evitar sobrecargarse con demasiadas tareas el mismo día.",
+            "Hablar con una persona de confianza sobre cómo se siente.",
+            "Usar pausas breves para evitar que la ansiedad aumente.",
+            "Realizar una actividad relajante como caminar, escuchar música tranquila o estirarse.",
+            "Observar si la ansiedad aparece en momentos específicos del día.",
+            "Priorizar dormir mejor durante la noche siguiente.",
+            "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+            "Intentar acostarse a una hora más estable.",
+            "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+            "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+            "Realizar actividades de concentración cortas, con descansos entre ellas.",
+            "Evitar hacer muchas tareas al mismo tiempo.",
+            "Repetir la prueba cognitiva después de descansar.",
+            "Registrar cualquier cambio importante en el historial del paciente.",
+            "Comparar este resultado con futuras evaluaciones para observar evolución.",
+            "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+        ],
+        "analysis": "El paciente presenta ansiedad leve según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo bajo.",
+        "raw_session": {
+            "patient_number": 2,
+            "case_code": "NS-P0002",
+            "gad7_score": 6,
+            "cognitive_score": 50,
+            "analysis": "El paciente presenta ansiedad leve según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo bajo.",
+            "sensor_data": {
+                "bpm": null,
+                "spo2": null
+            },
+            "extra_data": {
+                "source": "screens/patient.py",
+                "history_record": {
+                    "patient_number": 2,
+                    "case_code": "NS-P0002",
+                    "date": "2026-07-05 07:41:11",
+                    "general_state": "Riesgo moderado",
+                    "scores": {
+                        "intake": 14,
+                        "gad7": 6,
+                        "cognitive": 50,
+                        "sleep": 2
+                    },
+                    "alerts": [
+                        "Rendimiento cognitivo bajo.",
+                        "Sueño deficiente reportado."
+                    ],
+                    "analysis": [
+                        "El paciente presenta ansiedad leve según los datos registrados.",
+                        "La evaluación inicial muestra señales leves de malestar.",
+                        "El sueño deficiente puede estar afectando el estado emocional y la atención.",
+                        "En el área cognitiva, el resultado indica rendimiento cognitivo bajo."
+                    ],
+                    "recommendations": [
+                        "Tomar un descanso breve en un lugar tranquilo.",
+                        "Repetir la evaluación después de un tiempo para ver si el estado mejora o empeora.",
+                        "Considerar apoyo profesional si los síntomas continúan por varios días.",
+                        "Evitar sobrecargarse con demasiadas tareas el mismo día.",
+                        "Hablar con una persona de confianza sobre cómo se siente.",
+                        "Usar pausas breves para evitar que la ansiedad aumente.",
+                        "Realizar una actividad relajante como caminar, escuchar música tranquila o estirarse.",
+                        "Observar si la ansiedad aparece en momentos específicos del día.",
+                        "Priorizar dormir mejor durante la noche siguiente.",
+                        "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+                        "Intentar acostarse a una hora más estable.",
+                        "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+                        "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+                        "Realizar actividades de concentración cortas, con descansos entre ellas.",
+                        "Evitar hacer muchas tareas al mismo tiempo.",
+                        "Repetir la prueba cognitiva después de descansar.",
+                        "Registrar cualquier cambio importante en el historial del paciente.",
+                        "Comparar este resultado con futuras evaluaciones para observar evolución.",
+                        "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+                    ],
+                    "conclusion": "El paciente presenta señales emocionales activas, principalmente relacionadas con ansiedad, estrés o descanso insuficiente. No se descarta necesidad de seguimiento.",
+                    "summary_text": "Paciente número 2\nCódigo de expediente: NS-P0002\n\nEstado general: Riesgo moderado\n\nPuntajes:\n- Intake inicial: 14\n- GAD-7: 6\n- Cognitivo: 50%\n- Sueño: 2\n\nAlertas:\n- Rendimiento cognitivo bajo.\n- Sueño deficiente reportado.\n\nAnálisis:\n- El paciente presenta ansiedad leve según los datos registrados.\n- La evaluación inicial muestra señales leves de malestar.\n- El sueño deficiente puede estar afectando el estado emocional y la atención.\n- En el área cognitiva, el resultado indica rendimiento cognitivo bajo.\n\nRecomendaciones:\n- Tomar un descanso breve en un lugar tranquilo.\n- Repetir la evaluación después de un tiempo para ver si el estado mejora o empeora.\n- Considerar apoyo profesional si los síntomas continúan por varios días.\n- Evitar sobrecargarse con demasiadas tareas el mismo día.\n- Hablar con una persona de confianza sobre cómo se siente.\n- Usar pausas breves para evitar que la ansiedad aumente.\n- Realizar una actividad relajante como caminar, escuchar música tranquila o estirarse.\n- Observar si la ansiedad aparece en momentos específicos del día.\n- Priorizar dormir mejor durante la noche siguiente.\n- Evitar pantallas, café o bebidas energéticas antes de dormir.\n- Intentar acostarse a una hora más estable.\n- Reducir ruido, luz fuerte o distracciones al momento de dormir.\n- Si el mal sueño continúa, registrarlo y comentarlo con un profesional.\n- Realizar actividades de concentración cortas, con descansos entre ellas.\n- Evitar hacer muchas tareas al mismo tiempo.\n- Repetir la prueba cognitiva después de descansar.\n- Registrar cualquier cambio importante en el historial del paciente.\n- Comparar este resultado con futuras evaluaciones para observar evolución.\n- Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional.\n\nConclusión:\nEl paciente presenta señales emocionales activas, principalmente relacionadas con ansiedad, estrés o descanso insuficiente. No se descarta necesidad de seguimiento.\n\nExpediente guardado correctamente",
+                    "raw_session": {
+                        "patient_number": 2,
+                        "created_at": "2026-07-05 07:40:33",
+                        "intake": {
+                            "phase": "intake_inicial",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "current_state",
+                                    "question": "¿Cómo te sientes en este momento, en una escala del uno al diez?",
+                                    "answer_text": "4–5: Mal / bajo",
+                                    "value": 5
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "recent_sleep_quality",
+                                    "question": "¿Has dormido bien las últimas noches?",
+                                    "answer_text": "He dormido poco",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "sleep_hours",
+                                    "question": "¿Cuántas horas dormiste anoche, aproximadamente?",
+                                    "answer_text": "4 a 5 horas",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "stress_today",
+                                    "question": "¿Hay algo en particular que te genere estrés o ansiedad hoy?",
+                                    "answer_text": "Algo leve",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "stimulants",
+                                    "question": "¿Has consumido cafeína, alcohol, o algún estimulante en las últimas horas?",
+                                    "answer_text": "Alcohol",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "body_tension",
+                                    "question": "¿Sientes tensión física en algún lugar de tu cuerpo en este momento?",
+                                    "answer_text": "Espalda / cuerpo",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "weekly_mood",
+                                    "question": "¿Cómo describirías tu estado de ánimo general esta semana?",
+                                    "answer_text": "Cansado",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 8,
+                                    "id": "session_experience",
+                                    "question": "¿Esta es tu primera sesión con Neuro Space o ya has hecho alguna antes?",
+                                    "answer_text": "Primera sesión",
+                                    "value": 0
+                                }
+                            ],
+                            "score": 14
+                        },
+                        "gad7": {
+                            "phase": "gad7",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "nervous",
+                                    "question": "Sentirte nervioso, ansioso o con los nervios de punta.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "worry_control",
+                                    "question": "No poder dejar de preocuparte o controlar tus preocupaciones.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "too_much_worry",
+                                    "question": "Preocuparte demasiado por diferentes cosas.",
+                                    "answer_text": "Más de la mitad de los días",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "relaxing",
+                                    "question": "Tener dificultad para relajarte.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "restless",
+                                    "question": "Estar tan inquieto que te resulta difícil quedarte quieto.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "irritable",
+                                    "question": "Irritarte o enojarte con facilidad.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "afraid",
+                                    "question": "Sentir miedo, como si algo terrible pudiera pasar.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                }
+                            ],
+                            "score": 6,
+                            "level": "Ansiedad leve"
+                        },
+                        "cognitive": {
+                            "test": "Atención por colores",
+                            "total": 8,
+                            "correct": 4,
+                            "errors": 4,
+                            "accuracy": 50.0,
+                            "avg_reaction_time": 0.68,
+                            "level": "Atención baja"
+                        }
+                    }
+                }
+            }
+        },
+        "conclusion": "El paciente presenta señales emocionales activas, principalmente relacionadas con ansiedad, estrés o descanso insuficiente. No se descarta necesidad de seguimiento."
+    },
+    {
+        "patient_number": 3,
+        "patient_label": "Paciente 3",
+        "expediente_code": "NS-P0003",
+        "verification_code": "35102677",
+        "created_at": "2026-07-05 05:33:42",
+        "general_state": "Riesgo leve",
+        "results": {
+            "gad7_score": 8,
+            "cognitive_score": 86
+        },
+        "recommendations": [
+            "Recomendar descanso adecuado y monitoreo preventivo.",
+            "Mantener hábitos saludables y repetir evaluación si los síntomas aumentan."
+        ],
+        "analysis": "Paciente con síntomas leves. Rendimiento cognitivo adecuado.",
+        "raw_session": {
+            "gad7_score": 8,
+            "cognitive_score": 86,
+            "analysis": "Paciente con síntomas leves. Rendimiento cognitivo adecuado.",
+            "sensor_data": {
+                "bpm": 79,
+                "spo2": 99
+            },
+            "extra_data": {
+                "sleep": "Regular",
+                "stress": "Medio"
+            }
+        }
+    },
+    {
+        "patient_number": 4,
+        "patient_label": "Paciente 4",
+        "expediente_code": "NS-P0004",
+        "verification_code": "54830601",
+        "created_at": "2026-07-05 05:41:04",
+        "general_state": "Riesgo alto",
+        "results": {
+            "gad7_score": 11,
+            "cognitive_score": 12
+        },
+        "recommendations": [
+            "Recomendar evaluación profesional lo antes posible.",
+            "Evitar que el paciente permanezca sin acompañamiento si presenta malestar fuerte.",
+            "Registrar síntomas principales y cambios recientes.",
+            "Realizar ejercicios de atención y memoria.",
+            "Registrar posibles detonantes de ansiedad."
+        ],
+        "analysis": "El paciente presenta ansiedad moderada según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo.",
+        "raw_session": {
+            "gad7_score": 11,
+            "cognitive_score": 12,
+            "analysis": "El paciente presenta ansiedad moderada según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo.",
+            "sensor_data": {
+                "bpm": null,
+                "spo2": null
+            },
+            "extra_data": {
+                "source": "screens/patient.py",
+                "history_record": {
+                    "patient_number": 2,
+                    "case_code": "NS-P0002",
+                    "date": "2026-07-05 05:41:04",
+                    "general_state": "Riesgo alto",
+                    "scores": {
+                        "intake": 12,
+                        "gad7": 11,
+                        "cognitive": 12,
+                        "sleep": 3
+                    },
+                    "alerts": [
+                        "Ansiedad moderada detectada.",
+                        "Rendimiento cognitivo muy bajo.",
+                        "Sueño deficiente reportado."
+                    ],
+                    "analysis": [
+                        "El paciente presenta ansiedad moderada según los datos registrados.",
+                        "La evaluación inicial muestra señales leves de malestar.",
+                        "El sueño deficiente puede estar afectando el estado emocional y la atención.",
+                        "En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo."
+                    ],
+                    "recommendations": [
+                        "Buscar apoyo de un profesional de salud mental lo antes posible.",
+                        "No ignorar los síntomas si el malestar emocional es intenso.",
+                        "Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.",
+                        "Realizar una nueva evaluación más adelante para comparar el cambio del estado.",
+                        "Reducir actividades que aumenten el estrés durante las próximas horas.",
+                        "Realizar respiración lenta durante 3 a 5 minutos.",
+                        "Identificar qué situación pudo aumentar la ansiedad.",
+                        "Hacer una pausa corta antes de continuar con actividades exigentes.",
+                        "Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.",
+                        "Priorizar dormir mejor durante la noche siguiente.",
+                        "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+                        "Intentar acostarse a una hora más estable.",
+                        "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+                        "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+                        "Repetir la prueba cognitiva en un ambiente silencioso y sin distracciones.",
+                        "Evitar tareas que requieran mucha concentración hasta descansar.",
+                        "Revisar si el bajo rendimiento puede estar relacionado con cansancio, estrés o mal sueño.",
+                        "Considerar evaluación profesional si el bajo rendimiento se repite.",
+                        "Registrar cualquier cambio importante en el historial del paciente.",
+                        "Comparar este resultado con futuras evaluaciones para observar evolución.",
+                        "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+                    ],
+                    "conclusion": "El paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional.",
+                    "summary_text": "Paciente número 2\nCódigo de expediente: NS-P0002\n\nEstado general: Riesgo alto\n\nPuntajes:\n- Intake inicial: 12\n- GAD-7: 11\n- Cognitivo: 12%\n- Sueño: 3\n\nAlertas:\n- Ansiedad moderada detectada.\n- Rendimiento cognitivo muy bajo.\n- Sueño deficiente reportado.\n\nAnálisis:\n- El paciente presenta ansiedad moderada según los datos registrados.\n- La evaluación inicial muestra señales leves de malestar.\n- El sueño deficiente puede estar afectando el estado emocional y la atención.\n- En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo.\n\nRecomendaciones:\n- Buscar apoyo de un profesional de salud mental lo antes posible.\n- No ignorar los síntomas si el malestar emocional es intenso.\n- Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.\n- Realizar una nueva evaluación más adelante para comparar el cambio del estado.\n- Reducir actividades que aumenten el estrés durante las próximas horas.\n- Realizar respiración lenta durante 3 a 5 minutos.\n- Identificar qué situación pudo aumentar la ansiedad.\n- Hacer una pausa corta antes de continuar con actividades exigentes.\n- Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.\n- Priorizar dormir mejor durante la noche siguiente.\n- Evitar pantallas, café o bebidas energéticas antes de dormir.\n- Intentar acostarse a una hora más estable.\n- Reducir ruido, luz fuerte o distracciones al momento de dormir.\n- Si el mal sueño continúa, registrarlo y comentarlo con un profesional.\n- Repetir la prueba cognitiva en un ambiente silencioso y sin distracciones.\n- Evitar tareas que requieran mucha concentración hasta descansar.\n- Revisar si el bajo rendimiento puede estar relacionado con cansancio, estrés o mal sueño.\n- Considerar evaluación profesional si el bajo rendimiento se repite.\n- Registrar cualquier cambio importante en el historial del paciente.\n- Comparar este resultado con futuras evaluaciones para observar evolución.\n- Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional.\n\nConclusión:\nEl paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional.\n\nExpediente guardado correctamente",
+                    "raw_session": {
+                        "patient_number": 2,
+                        "created_at": "2026-07-05 05:40:47",
+                        "intake": {
+                            "phase": "intake_inicial",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "current_state",
+                                    "question": "¿Cómo te sientes en este momento, en una escala del uno al diez?",
+                                    "answer_text": "1–3: Muy mal",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "recent_sleep_quality",
+                                    "question": "¿Has dormido bien las últimas noches?",
+                                    "answer_text": "No he dormido bien",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "sleep_hours",
+                                    "question": "¿Cuántas horas dormiste anoche, aproximadamente?",
+                                    "answer_text": "6 a 7 horas",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "stress_today",
+                                    "question": "¿Hay algo en particular que te genere estrés o ansiedad hoy?",
+                                    "answer_text": "Algo leve",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "stimulants",
+                                    "question": "¿Has consumido cafeína, alcohol, o algún estimulante en las últimas horas?",
+                                    "answer_text": "No consumí nada",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "body_tension",
+                                    "question": "¿Sientes tensión física en algún lugar de tu cuerpo en este momento?",
+                                    "answer_text": "Espalda / cuerpo",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "weekly_mood",
+                                    "question": "¿Cómo describirías tu estado de ánimo general esta semana?",
+                                    "answer_text": "Triste / bajo",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 8,
+                                    "id": "session_experience",
+                                    "question": "¿Esta es tu primera sesión con Neuro Space o ya has hecho alguna antes?",
+                                    "answer_text": "Ya hice una antes",
+                                    "value": 1
+                                }
+                            ],
+                            "score": 12
+                        },
+                        "gad7": {
+                            "phase": "gad7",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "nervous",
+                                    "question": "Sentirte nervioso, ansioso o con los nervios de punta.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "worry_control",
+                                    "question": "No poder dejar de preocuparte o controlar tus preocupaciones.",
+                                    "answer_text": "Casi todos los días",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "too_much_worry",
+                                    "question": "Preocuparte demasiado por diferentes cosas.",
+                                    "answer_text": "Más de la mitad de los días",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "relaxing",
+                                    "question": "Tener dificultad para relajarte.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "restless",
+                                    "question": "Estar tan inquieto que te resulta difícil quedarte quieto.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "irritable",
+                                    "question": "Irritarte o enojarte con facilidad.",
+                                    "answer_text": "Casi todos los días",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "afraid",
+                                    "question": "Sentir miedo, como si algo terrible pudiera pasar.",
+                                    "answer_text": "Más de la mitad de los días",
+                                    "value": 2
+                                }
+                            ],
+                            "score": 11,
+                            "level": "Ansiedad moderada"
+                        },
+                        "cognitive": {
+                            "test": "Atención por colores",
+                            "total": 8,
+                            "correct": 1,
+                            "errors": 7,
+                            "accuracy": 12.5,
+                            "avg_reaction_time": 0.23,
+                            "level": "Atención baja"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "patient_number": 5,
+        "patient_label": "Paciente 5",
+        "expediente_code": "NS-P0005",
+        "verification_code": "69086675",
+        "created_at": "2026-07-05 05:50:38",
+        "general_state": "Riesgo moderado",
+        "results": {
+            "gad7_score": 12,
+            "cognitive_score": 62
+        },
+        "recommendations": [
+            "Recomendar seguimiento y nueva evaluación.",
+            "Aplicar técnicas de respiración y control de ansiedad.",
+            "Observar sueño, estrés y concentración durante los próximos días.",
+            "Realizar ejercicios de atención y memoria.",
+            "Registrar posibles detonantes de ansiedad."
+        ],
+        "analysis": "El paciente presenta ansiedad moderada según los datos registrados. La evaluación inicial muestra señales de carga emocional moderada. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo bajo.",
+        "raw_session": {
+            "gad7_score": 12,
+            "cognitive_score": 62,
+            "analysis": "El paciente presenta ansiedad moderada según los datos registrados. La evaluación inicial muestra señales de carga emocional moderada. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo bajo.",
+            "sensor_data": {
+                "bpm": null,
+                "spo2": null
+            },
+            "extra_data": {
+                "source": "screens/patient.py",
+                "history_record": {
+                    "patient_number": 3,
+                    "case_code": "NS-P0003",
+                    "date": "2026-07-05 05:50:38",
+                    "general_state": "Riesgo alto",
+                    "scores": {
+                        "intake": 19,
+                        "gad7": 12,
+                        "cognitive": 62,
+                        "sleep": 3
+                    },
+                    "alerts": [
+                        "Ansiedad moderada detectada.",
+                        "Carga emocional moderada en la evaluación inicial.",
+                        "Rendimiento cognitivo bajo.",
+                        "Sueño deficiente reportado."
+                    ],
+                    "analysis": [
+                        "El paciente presenta ansiedad moderada según los datos registrados.",
+                        "La evaluación inicial muestra señales de carga emocional moderada.",
+                        "El sueño deficiente puede estar afectando el estado emocional y la atención.",
+                        "En el área cognitiva, el resultado indica rendimiento cognitivo bajo."
+                    ],
+                    "recommendations": [
+                        "Buscar apoyo de un profesional de salud mental lo antes posible.",
+                        "No ignorar los síntomas si el malestar emocional es intenso.",
+                        "Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.",
+                        "Realizar una nueva evaluación más adelante para comparar el cambio del estado.",
+                        "Reducir actividades que aumenten el estrés durante las próximas horas.",
+                        "Realizar respiración lenta durante 3 a 5 minutos.",
+                        "Identificar qué situación pudo aumentar la ansiedad.",
+                        "Hacer una pausa corta antes de continuar con actividades exigentes.",
+                        "Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.",
+                        "Priorizar dormir mejor durante la noche siguiente.",
+                        "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+                        "Intentar acostarse a una hora más estable.",
+                        "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+                        "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+                        "Realizar actividades de concentración cortas, con descansos entre ellas.",
+                        "Evitar hacer muchas tareas al mismo tiempo.",
+                        "Repetir la prueba cognitiva después de descansar.",
+                        "Registrar cualquier cambio importante en el historial del paciente.",
+                        "Comparar este resultado con futuras evaluaciones para observar evolución.",
+                        "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+                    ],
+                    "conclusion": "El paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional.",
+                    "summary_text": "Paciente número 3\nCódigo de expediente: NS-P0003\n\nEstado general: Riesgo alto\n\nPuntajes:\n- Intake inicial: 19\n- GAD-7: 12\n- Cognitivo: 62%\n- Sueño: 3\n\nAlertas:\n- Ansiedad moderada detectada.\n- Carga emocional moderada en la evaluación inicial.\n- Rendimiento cognitivo bajo.\n- Sueño deficiente reportado.\n\nAnálisis:\n- El paciente presenta ansiedad moderada según los datos registrados.\n- La evaluación inicial muestra señales de carga emocional moderada.\n- El sueño deficiente puede estar afectando el estado emocional y la atención.\n- En el área cognitiva, el resultado indica rendimiento cognitivo bajo.\n\nRecomendaciones:\n- Buscar apoyo de un profesional de salud mental lo antes posible.\n- No ignorar los síntomas si el malestar emocional es intenso.\n- Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.\n- Realizar una nueva evaluación más adelante para comparar el cambio del estado.\n- Reducir actividades que aumenten el estrés durante las próximas horas.\n- Realizar respiración lenta durante 3 a 5 minutos.\n- Identificar qué situación pudo aumentar la ansiedad.\n- Hacer una pausa corta antes de continuar con actividades exigentes.\n- Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.\n- Priorizar dormir mejor durante la noche siguiente.\n- Evitar pantallas, café o bebidas energéticas antes de dormir.\n- Intentar acostarse a una hora más estable.\n- Reducir ruido, luz fuerte o distracciones al momento de dormir.\n- Si el mal sueño continúa, registrarlo y comentarlo con un profesional.\n- Realizar actividades de concentración cortas, con descansos entre ellas.\n- Evitar hacer muchas tareas al mismo tiempo.\n- Repetir la prueba cognitiva después de descansar.\n- Registrar cualquier cambio importante en el historial del paciente.\n- Comparar este resultado con futuras evaluaciones para observar evolución.\n- Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional.\n\nConclusión:\nEl paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional.\n\nExpediente guardado correctamente",
+                    "raw_session": {
+                        "patient_number": 3,
+                        "created_at": "2026-07-05 05:50:21",
+                        "intake": {
+                            "phase": "intake_inicial",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "current_state",
+                                    "question": "¿Cómo te sientes en este momento, en una escala del uno al diez?",
+                                    "answer_text": "6–7: Regular",
+                                    "value": 7
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "recent_sleep_quality",
+                                    "question": "¿Has dormido bien las últimas noches?",
+                                    "answer_text": "No he dormido bien",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "sleep_hours",
+                                    "question": "¿Cuántas horas dormiste anoche, aproximadamente?",
+                                    "answer_text": "Menos de 4 horas",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "stress_today",
+                                    "question": "¿Hay algo en particular que te genere estrés o ansiedad hoy?",
+                                    "answer_text": "Sí, demasiado",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "stimulants",
+                                    "question": "¿Has consumido cafeína, alcohol, o algún estimulante en las últimas horas?",
+                                    "answer_text": "Alcohol",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "body_tension",
+                                    "question": "¿Sientes tensión física en algún lugar de tu cuerpo en este momento?",
+                                    "answer_text": "Espalda / cuerpo",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "weekly_mood",
+                                    "question": "¿Cómo describirías tu estado de ánimo general esta semana?",
+                                    "answer_text": "Bueno / estable",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 8,
+                                    "id": "session_experience",
+                                    "question": "¿Esta es tu primera sesión con Neuro Space o ya has hecho alguna antes?",
+                                    "answer_text": "No estoy seguro",
+                                    "value": 0
+                                }
+                            ],
+                            "score": 19
+                        },
+                        "gad7": {
+                            "phase": "gad7",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "nervous",
+                                    "question": "Sentirte nervioso, ansioso o con los nervios de punta.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "worry_control",
+                                    "question": "No poder dejar de preocuparte o controlar tus preocupaciones.",
+                                    "answer_text": "Más de la mitad de los días",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "too_much_worry",
+                                    "question": "Preocuparte demasiado por diferentes cosas.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "relaxing",
+                                    "question": "Tener dificultad para relajarte.",
+                                    "answer_text": "Casi todos los días",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "restless",
+                                    "question": "Estar tan inquieto que te resulta difícil quedarte quieto.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "irritable",
+                                    "question": "Irritarte o enojarte con facilidad.",
+                                    "answer_text": "Casi todos los días",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "afraid",
+                                    "question": "Sentir miedo, como si algo terrible pudiera pasar.",
+                                    "answer_text": "Más de la mitad de los días",
+                                    "value": 2
+                                }
+                            ],
+                            "score": 12,
+                            "level": "Ansiedad moderada"
+                        },
+                        "cognitive": {
+                            "test": "Atención por colores",
+                            "total": 8,
+                            "correct": 5,
+                            "errors": 3,
+                            "accuracy": 62.5,
+                            "avg_reaction_time": 0.35,
+                            "level": "Atención baja"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "patient_number": 6,
+        "patient_label": "Paciente 6",
+        "expediente_code": "NS-P0006",
+        "verification_code": "83076475",
+        "created_at": "2026-07-05 07:53:03",
+        "general_state": "Riesgo alto",
+        "results": {
+            "gad7_score": 10,
+            "cognitive_score": 25
+        },
+        "recommendations": [
+            "Buscar apoyo de un profesional de salud mental lo antes posible.",
+            "No ignorar los síntomas si el malestar emocional es intenso.",
+            "Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.",
+            "Realizar una nueva evaluación más adelante para comparar el cambio del estado.",
+            "Reducir actividades que aumenten el estrés durante las próximas horas.",
+            "Realizar respiración lenta durante 3 a 5 minutos.",
+            "Identificar qué situación pudo aumentar la ansiedad.",
+            "Hacer una pausa corta antes de continuar con actividades exigentes.",
+            "Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.",
+            "Priorizar dormir mejor durante la noche siguiente.",
+            "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+            "Intentar acostarse a una hora más estable.",
+            "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+            "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+            "Repetir la prueba cognitiva en un ambiente silencioso y sin distracciones.",
+            "Evitar tareas que requieran mucha concentración hasta descansar.",
+            "Revisar si el bajo rendimiento puede estar relacionado con cansancio, estrés o mal sueño.",
+            "Considerar evaluación profesional si el bajo rendimiento se repite.",
+            "Registrar cualquier cambio importante en el historial del paciente.",
+            "Comparar este resultado con futuras evaluaciones para observar evolución.",
+            "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+        ],
+        "analysis": "El paciente presenta ansiedad moderada según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo.",
+        "raw_session": {
+            "patient_number": 6,
+            "case_code": "NS-P0006",
+            "gad7_score": 10,
+            "cognitive_score": 25,
+            "analysis": "El paciente presenta ansiedad moderada según los datos registrados. La evaluación inicial muestra señales leves de malestar. El sueño deficiente puede estar afectando el estado emocional y la atención. En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo.",
+            "sensor_data": {
+                "bpm": null,
+                "spo2": null
+            },
+            "extra_data": {
+                "source": "screens/patient.py",
+                "history_record": {
+                    "patient_number": 6,
+                    "case_code": "NS-P0006",
+                    "date": "2026-07-05 07:53:03",
+                    "general_state": "Riesgo alto",
+                    "scores": {
+                        "intake": 12,
+                        "gad7": 10,
+                        "cognitive": 25,
+                        "sleep": 2
+                    },
+                    "alerts": [
+                        "Ansiedad moderada detectada.",
+                        "Rendimiento cognitivo muy bajo.",
+                        "Sueño deficiente reportado."
+                    ],
+                    "analysis": [
+                        "El paciente presenta ansiedad moderada según los datos registrados.",
+                        "La evaluación inicial muestra señales leves de malestar.",
+                        "El sueño deficiente puede estar afectando el estado emocional y la atención.",
+                        "En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo."
+                    ],
+                    "recommendations": [
+                        "Buscar apoyo de un profesional de salud mental lo antes posible.",
+                        "No ignorar los síntomas si el malestar emocional es intenso.",
+                        "Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.",
+                        "Realizar una nueva evaluación más adelante para comparar el cambio del estado.",
+                        "Reducir actividades que aumenten el estrés durante las próximas horas.",
+                        "Realizar respiración lenta durante 3 a 5 minutos.",
+                        "Identificar qué situación pudo aumentar la ansiedad.",
+                        "Hacer una pausa corta antes de continuar con actividades exigentes.",
+                        "Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.",
+                        "Priorizar dormir mejor durante la noche siguiente.",
+                        "Evitar pantallas, café o bebidas energéticas antes de dormir.",
+                        "Intentar acostarse a una hora más estable.",
+                        "Reducir ruido, luz fuerte o distracciones al momento de dormir.",
+                        "Si el mal sueño continúa, registrarlo y comentarlo con un profesional.",
+                        "Repetir la prueba cognitiva en un ambiente silencioso y sin distracciones.",
+                        "Evitar tareas que requieran mucha concentración hasta descansar.",
+                        "Revisar si el bajo rendimiento puede estar relacionado con cansancio, estrés o mal sueño.",
+                        "Considerar evaluación profesional si el bajo rendimiento se repite.",
+                        "Registrar cualquier cambio importante en el historial del paciente.",
+                        "Comparar este resultado con futuras evaluaciones para observar evolución.",
+                        "Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional."
+                    ],
+                    "conclusion": "El paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional.",
+                    "summary_text": "Paciente número 6\nCódigo de expediente: NS-P0006\n\nEstado general: Riesgo alto\n\nPuntajes:\n- Intake inicial: 12\n- GAD-7: 10\n- Cognitivo: 25%\n- Sueño: 2\n\nAlertas:\n- Ansiedad moderada detectada.\n- Rendimiento cognitivo muy bajo.\n- Sueño deficiente reportado.\n\nAnálisis:\n- El paciente presenta ansiedad moderada según los datos registrados.\n- La evaluación inicial muestra señales leves de malestar.\n- El sueño deficiente puede estar afectando el estado emocional y la atención.\n- En el área cognitiva, el resultado indica rendimiento cognitivo muy bajo.\n\nRecomendaciones:\n- Buscar apoyo de un profesional de salud mental lo antes posible.\n- No ignorar los síntomas si el malestar emocional es intenso.\n- Evitar que el paciente se quede sin acompañamiento si se siente muy alterado.\n- Realizar una nueva evaluación más adelante para comparar el cambio del estado.\n- Reducir actividades que aumenten el estrés durante las próximas horas.\n- Realizar respiración lenta durante 3 a 5 minutos.\n- Identificar qué situación pudo aumentar la ansiedad.\n- Hacer una pausa corta antes de continuar con actividades exigentes.\n- Evitar cafeína o bebidas energéticas si el paciente se siente nervioso.\n- Priorizar dormir mejor durante la noche siguiente.\n- Evitar pantallas, café o bebidas energéticas antes de dormir.\n- Intentar acostarse a una hora más estable.\n- Reducir ruido, luz fuerte o distracciones al momento de dormir.\n- Si el mal sueño continúa, registrarlo y comentarlo con un profesional.\n- Repetir la prueba cognitiva en un ambiente silencioso y sin distracciones.\n- Evitar tareas que requieran mucha concentración hasta descansar.\n- Revisar si el bajo rendimiento puede estar relacionado con cansancio, estrés o mal sueño.\n- Considerar evaluación profesional si el bajo rendimiento se repite.\n- Registrar cualquier cambio importante en el historial del paciente.\n- Comparar este resultado con futuras evaluaciones para observar evolución.\n- Recordar que esta evaluación es orientativa y no reemplaza una valoración profesional.\n\nConclusión:\nEl paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional.\n\nExpediente guardado correctamente",
+                    "raw_session": {
+                        "patient_number": 6,
+                        "created_at": "2026-07-05 07:52:47",
+                        "intake": {
+                            "phase": "intake_inicial",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "current_state",
+                                    "question": "¿Cómo te sientes en este momento, en una escala del uno al diez?",
+                                    "answer_text": "1–3: Muy mal",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "recent_sleep_quality",
+                                    "question": "¿Has dormido bien las últimas noches?",
+                                    "answer_text": "He dormido poco",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "sleep_hours",
+                                    "question": "¿Cuántas horas dormiste anoche, aproximadamente?",
+                                    "answer_text": "8 horas o más",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "stress_today",
+                                    "question": "¿Hay algo en particular que te genere estrés o ansiedad hoy?",
+                                    "answer_text": "Algo leve",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "stimulants",
+                                    "question": "¿Has consumido cafeína, alcohol, o algún estimulante en las últimas horas?",
+                                    "answer_text": "No consumí nada",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "body_tension",
+                                    "question": "¿Sientes tensión física en algún lugar de tu cuerpo en este momento?",
+                                    "answer_text": "Pecho / respiración",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "weekly_mood",
+                                    "question": "¿Cómo describirías tu estado de ánimo general esta semana?",
+                                    "answer_text": "Ansioso / irritable",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 8,
+                                    "id": "session_experience",
+                                    "question": "¿Esta es tu primera sesión con Neuro Space o ya has hecho alguna antes?",
+                                    "answer_text": "Ya hice una antes",
+                                    "value": 1
+                                }
+                            ],
+                            "score": 12
+                        },
+                        "gad7": {
+                            "phase": "gad7",
+                            "answers": [
+                                {
+                                    "number": 1,
+                                    "id": "nervous",
+                                    "question": "Sentirte nervioso, ansioso o con los nervios de punta.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 2,
+                                    "id": "worry_control",
+                                    "question": "No poder dejar de preocuparte o controlar tus preocupaciones.",
+                                    "answer_text": "Más de la mitad de los días",
+                                    "value": 2
+                                },
+                                {
+                                    "number": 3,
+                                    "id": "too_much_worry",
+                                    "question": "Preocuparte demasiado por diferentes cosas.",
+                                    "answer_text": "Casi todos los días",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 4,
+                                    "id": "relaxing",
+                                    "question": "Tener dificultad para relajarte.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                },
+                                {
+                                    "number": 5,
+                                    "id": "restless",
+                                    "question": "Estar tan inquieto que te resulta difícil quedarte quieto.",
+                                    "answer_text": "Nunca",
+                                    "value": 0
+                                },
+                                {
+                                    "number": 6,
+                                    "id": "irritable",
+                                    "question": "Irritarte o enojarte con facilidad.",
+                                    "answer_text": "Casi todos los días",
+                                    "value": 3
+                                },
+                                {
+                                    "number": 7,
+                                    "id": "afraid",
+                                    "question": "Sentir miedo, como si algo terrible pudiera pasar.",
+                                    "answer_text": "Varios días",
+                                    "value": 1
+                                }
+                            ],
+                            "score": 10,
+                            "level": "Ansiedad moderada"
+                        },
+                        "cognitive": {
+                            "test": "Atención por colores",
+                            "total": 8,
+                            "correct": 2,
+                            "errors": 6,
+                            "accuracy": 25.0,
+                            "avg_reaction_time": 0.18,
+                            "level": "Atención baja"
+                        }
+                    }
+                }
+            }
+        },
+        "conclusion": "El paciente muestra señales importantes de alteración emocional o cognitiva. Se recomienda seguimiento cuidadoso y valoración profesional."
+    }
+]

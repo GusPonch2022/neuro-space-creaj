@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Expediente {{ expediente }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container wide">
+
+        <div class="top-bar">
+            <div class="brand">NEURO SPACE · CREA-J</div>
+            <a class="back-btn" href="/">Cerrar sesión</a>
+        </div>
+
+        <div class="header">
+            <h1>Expediente del Paciente</h1>
+
+            <div class="subtitle">
+                Expediente: <strong>{{ expediente }}</strong>
+                {% if patient_name %}
+                    · Paciente: <strong>{{ patient_name }}</strong>
+                {% endif %}
+            </div>
+
+            <div class="risk-card {{ risk_class }}">
+                Estado general: {{ risk_text }}
+            </div>
+        </div>
+
+        {% if error %}
+            <div class="panel">
+                <p class="error">{{ error }}</p>
+            </div>
+        {% endif %}
+
+        {% if patient %}
+            <div class="grid">
+
+                <div class="panel">
+                    <h2>Datos principales</h2>
+
+                    {% if sections.main_data %}
+                        {% for item in sections.main_data %}
+                            <div class="data-row">
+                                <div class="label">{{ item.label }}</div>
+                                <div class="value">{{ item.value }}</div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="empty">No hay datos principales registrados.</p>
+                    {% endif %}
+                </div>
+
+                <div class="panel">
+                    <h2>Resultados</h2>
+
+                    {% if sections.results %}
+                        {% for item in sections.results %}
+                            <div class="data-row">
+                                <div class="label">{{ item.label }}</div>
+
+                                {% if item.value is mapping %}
+                                    <div class="value"><pre>{{ item.value | json_pretty }}</pre></div>
+                                {% elif item.value is iterable and item.value is not string %}
+                                    <div class="value">
+                                        <ul class="mini-list">
+                                            {% for subitem in item.value %}
+                                                <li>{{ subitem }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% else %}
+                                    <div class="value">{{ item.value }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="empty">No hay resultados registrados.</p>
+                    {% endif %}
+                </div>
+
+                <div class="panel full">
+                    <h2>Recomendaciones</h2>
+
+                    {% if sections.recommendations %}
+                        <ul>
+                            {% for rec in sections.recommendations %}
+                                <li>{{ rec }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="empty">No hay recomendaciones registradas para este paciente.</p>
+                    {% endif %}
+                </div>
+
+                <div class="panel full">
+                    <h2>Análisis y resumen</h2>
+
+                    {% if sections.analysis_blocks %}
+                        {% for item in sections.analysis_blocks %}
+                            <div class="analysis-block">
+                                <h3>{{ item.label }}</h3>
+
+                                {% if item.value is mapping %}
+                                    <pre>{{ item.value | json_pretty }}</pre>
+                                {% elif item.value is iterable and item.value is not string %}
+                                    <ul>
+                                        {% for subitem in item.value %}
+                                            <li>{{ subitem }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p>{{ item.value }}</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="empty">No hay análisis adicional registrado.</p>
+                    {% endif %}
+                </div>
+
+                <div class="panel full">
+                    <h2>Historial del paciente</h2>
+
+                    {% if history %}
+                        {% for item in history %}
+                            <details class="history-item">
+                                <summary>
+                                    Evaluación {{ loop.index }}
+                                    {% if item.get("date") or item.get("created_at") %}
+                                        · {{ item.get("date", item.get("created_at")) }}
+                                    {% endif %}
+                                </summary>
+
+                                {% if item.get("general_state") or item.get("estado_general") or item.get("risk_level") %}
+                                    <div class="history-line">
+                                        <span class="label">Estado:</span>
+                                        {{ item.get("general_state", item.get("estado_general", item.get("risk_level"))) }}
+                                    </div>
+                                {% endif %}
+
+                                {% if item.get("scores") %}
+                                    <h3>Puntajes</h3>
+                                    <pre>{{ item.get("scores") | json_pretty }}</pre>
+                                {% endif %}
+
+                                {% if item.get("alerts") %}
+                                    <h3>Alertas</h3>
+                                    <ul>
+                                        {% for alert in item.get("alerts") %}
+                                            <li>{{ alert }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                {% if item.get("analysis") %}
+                                    <h3>Análisis</h3>
+                                    {% if item.get("analysis") is iterable and item.get("analysis") is not string %}
+                                        <ul>
+                                            {% for line in item.get("analysis") %}
+                                                <li>{{ line }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <p>{{ item.get("analysis") }}</p>
+                                    {% endif %}
+                                {% endif %}
+
+                                {% if item.get("recommendations") %}
+                                    <h3>Recomendaciones</h3>
+                                    <ul>
+                                        {% for rec in item.get("recommendations") %}
+                                            <li>{{ rec }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                {% if item.get("conclusion") %}
+                                    <h3>Conclusión</h3>
+                                    <p>{{ item.get("conclusion") }}</p>
+                                {% endif %}
+                            </details>
+                        {% endfor %}
+                    {% else %}
+                        <p class="empty">No hay historial detallado para este expediente todavía.</p>
+                    {% endif %}
+                </div>
+                
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>

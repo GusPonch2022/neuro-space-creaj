@@ -1,0 +1,37 @@
+{
+  "sections": [
+    {
+      "selectedTests": {
+        "gad7": true,
+        "attention": true,
+        "stroop": true,
+        "nback": true,
+        "decision": true,
+        "breathing": true,
+        "phobia": true,
+        "experience": true
+      },
+      "phobia": {
+        "mode": "doctor_pick",
+        "doctorPhobia": "multitudes"
+      }
+    },
+    {
+      "selectedTests": {
+        "gad7": true,
+        "attention": true,
+        "stroop": true,
+        "nback": true,
+        "decision": true,
+        "breathing": true,
+        "phobia": true,
+        "experience": true
+      },
+      "phobia": {
+        "mode": "doctor_pick",
+        "doctorPhobia": "multitudes"
+      }
+    }
+  ],
+  "ageCategory": "adultos_16mas"
+}
