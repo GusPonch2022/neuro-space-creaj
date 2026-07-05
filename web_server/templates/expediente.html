@@ -120,7 +120,23 @@
                         <p class="empty">No hay análisis adicional registrado.</p>
                     {% endif %}
                 </div>
+                <div class="panel full qr-section">
+                    <h2>Consulta tus resultados en línea</h2>
 
+                    <p>
+                        Escanea este QR desde tu celular e ingresa con tu expediente y código de acceso.
+                    </p>
+
+<img
+    src="{{ url_for('neuro_qr') }}"
+    alt="QR Neuro Space CREA-J"
+    class="qr-image"
+>
+
+                    <p class="qr-link">
+                        https://neuro-space-creaj.onrender.com
+                    </p>
+                </div>                
                 <div class="panel full">
                     <h2>Historial del paciente</h2>
 

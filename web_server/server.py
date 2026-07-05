@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_file
+from io import BytesIO
 import json
 import os
+import qrcode
 
 app = Flask(__name__)
 
@@ -427,6 +429,35 @@ def find_patient_history(expediente):
 # =========================
 # RUTAS
 # =========================
+# =========================
+# QR AUTOMÁTICO
+# =========================
+
+QR_URL = os.environ.get("QR_URL", "https://neuro-space-creaj.onrender.com")
+
+
+@app.route("/qr")
+def neuro_qr():
+    qr = qrcode.QRCode(
+        version=None,
+        error_correction=qrcode.constants.ERROR_CORRECT_H,
+        box_size=12,
+        border=4,
+    )
+
+    qr.add_data(QR_URL)
+    qr.make(fit=True)
+
+    img = qr.make_image(
+        fill_color="black",
+        back_color="white"
+    ).convert("RGB")
+
+    buffer = BytesIO()
+    img.save(buffer, format="PNG")
+    buffer.seek(0)
+
+    return send_file(buffer, mimetype="image/png")
 
 @app.route("/", methods=["GET", "POST"])
 def login():

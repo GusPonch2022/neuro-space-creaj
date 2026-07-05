@@ -354,3 +354,28 @@ pre {
         max-width: 100%;
     }
 }
+.qr-section {
+    text-align: center;
+}
+
+.qr-section p {
+    color: #d7f8ff;
+    margin-bottom: 14px;
+}
+
+.qr-image {
+    width: 230px;
+    max-width: 80%;
+    display: block;
+    margin: 18px auto;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.25);
+}
+
+.qr-link {
+    font-size: 0.9rem;
+    color: #00eaff;
+    word-break: break-all;
+}
