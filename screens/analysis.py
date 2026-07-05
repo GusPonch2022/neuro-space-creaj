@@ -1,3 +1,4 @@
+import os
 import pygame
 
 from hud import CYAN, RED, TEXT, TEXT_DIM, draw_button
@@ -413,7 +414,26 @@ def get_priority_action(record):
 
     return "Mantener seguimiento preventivo y comparar con próximas evaluaciones."
 
+def load_qr_image():
+    """
+    Carga el QR general del servidor Neuro Space.
+    """
+    qr_path = os.path.join(
+        "web_server",
+        "static",
+        "neuro_space_creaj_qr.png",
+    )
 
+    if not os.path.exists(qr_path):
+        return None
+
+    try:
+        qr_image = pygame.image.load(qr_path).convert_alpha()
+        qr_image = pygame.transform.smoothscale(qr_image, (230, 230))
+        return qr_image
+    except Exception as error:
+        print("⚠️ No se pudo cargar el QR:", error)
+        return None
 def draw_metric_box(surface, rect, title, value, detail, engine):
     font_med = get_med_font(engine)
 
@@ -434,7 +454,7 @@ def show_patient_analysis_detail(engine, record):
     scroll = {"value": 0}
 
     font_med = get_med_font(engine)
-
+    qr_image = load_qr_image()
     patient_number = record.get("patient_number", "N/A")
     case_code = record.get("case_code", "N/A")
     date = record.get("date", "Sin fecha")
@@ -671,6 +691,87 @@ def show_patient_analysis_detail(engine, record):
                 content.blit(txt, (50, y))
 
             y += 32
+        y += 35
+
+        y += 35
+
+        qr_box = pygame.Rect(
+            main_panel.width // 2 - 180,
+            y,
+            360,
+            390,
+        )
+
+        if -430 < y < main_panel.height:
+            pygame.draw.rect(content, (7, 24, 35), qr_box, border_radius=18)
+            pygame.draw.rect(content, CYAN, qr_box, 2, border_radius=18)
+
+            qr_title = font_med.render(
+                "ACCESO WEB",
+                True,
+                CYAN,
+            )
+
+            content.blit(
+                qr_title,
+                (
+                    qr_box.centerx - qr_title.get_width() // 2,
+                    qr_box.y + 22,
+                ),
+            )
+
+            qr_text = engine.font_small.render(
+                "Escanea e ingresa expediente y código",
+                True,
+                TEXT_DIM,
+            )
+
+            content.blit(
+                qr_text,
+                (
+                    qr_box.centerx - qr_text.get_width() // 2,
+                    qr_box.y + 62,
+                ),
+            )
+
+            if qr_image:
+                content.blit(
+                    qr_image,
+                    (
+                        qr_box.centerx - qr_image.get_width() // 2,
+                        qr_box.y + 105,
+                    ),
+                )
+            else:
+                missing = engine.font_small.render(
+                    "QR no encontrado",
+                    True,
+                    RED,
+                )
+
+                content.blit(
+                    missing,
+                    (
+                        qr_box.centerx - missing.get_width() // 2,
+                        qr_box.y + 175,
+                    ),
+                )
+
+            web_link = engine.font_small.render(
+                "neuro-space-creaj.onrender.com",
+                True,
+                CYAN,
+            )
+
+            content.blit(
+                web_link,
+                (
+                    qr_box.centerx - web_link.get_width() // 2,
+                    qr_box.y + 350,
+                ),
+            )
+
+        y += 420            
 
         hint = engine.font_small.render(
             "Usa la rueda del mouse para ver más análisis",
