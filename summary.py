@@ -534,3 +534,234 @@ def build_summary_text(summary):
     lines.append(summary["saved_message"])
 
     return "\n".join(lines)
+def generate_result_reasons(evaluation):
+    """
+    Genera razones explicativas del resultado final del paciente.
+    Explica por qué salió riesgo leve, moderado o alto.
+    """
+    reasons = []
+
+    general_status = evaluation.get("estado_general", "")
+    gad7_score = evaluation.get("gad7_score", 0)
+    cognitive_score = evaluation.get("cognitive_score", 0)
+
+    # Razón por ansiedad
+    if gad7_score <= 4:
+        reasons.append(
+            f"El puntaje de ansiedad GAD-7 fue {gad7_score}, lo que indica síntomas mínimos o leves de ansiedad."
+        )
+    elif gad7_score <= 9:
+        reasons.append(
+            f"El puntaje de ansiedad GAD-7 fue {gad7_score}, lo que indica presencia leve a moderada de ansiedad."
+        )
+    elif gad7_score <= 14:
+        reasons.append(
+            f"El puntaje de ansiedad GAD-7 fue {gad7_score}, lo que indica ansiedad moderada y requiere observación."
+        )
+    else:
+        reasons.append(
+            f"El puntaje de ansiedad GAD-7 fue {gad7_score}, lo que indica ansiedad elevada y posible necesidad de valoración profesional."
+        )
+
+    # Razón cognitiva
+    if cognitive_score >= 80:
+        reasons.append(
+            f"El puntaje cognitivo fue {cognitive_score}, indicando un rendimiento adecuado en atención y respuesta durante la prueba."
+        )
+    elif cognitive_score >= 60:
+        reasons.append(
+            f"El puntaje cognitivo fue {cognitive_score}, indicando posibles dificultades leves de atención o concentración."
+        )
+    else:
+        reasons.append(
+            f"El puntaje cognitivo fue {cognitive_score}, indicando dificultad importante en el rendimiento cognitivo durante la evaluación."
+        )
+
+    # Razón del estado general
+    if "leve" in general_status.lower():
+        reasons.append(
+            "El estado general se clasificó como riesgo leve porque no se detectaron señales críticas, aunque se recomienda mantener observación."
+        )
+    elif "moderado" in general_status.lower():
+        reasons.append(
+            "El estado general se clasificó como riesgo moderado porque existen señales que requieren seguimiento y control."
+        )
+    elif "alto" in general_status.lower() or "grave" in general_status.lower():
+        reasons.append(
+            "El estado general se clasificó como riesgo alto porque se detectaron señales importantes que requieren atención cuidadosa."
+        )
+    else:
+        reasons.append(
+            "El estado general fue calculado a partir de los resultados emocionales, cognitivos y de la evaluación general del paciente."
+        )
+
+    return reasons
+
+
+def generate_recommendation_reasons(evaluation):
+    """
+    Genera razones de por qué se dan las recomendaciones.
+    """
+    reasons = []
+
+    gad7_score = evaluation.get("gad7_score", 0)
+    cognitive_score = evaluation.get("cognitive_score", 0)
+
+    if gad7_score <= 4:
+        reasons.append(
+            "Se recomienda mantener observación porque, aunque la ansiedad es baja, el estado emocional puede cambiar durante el día."
+        )
+    elif gad7_score <= 9:
+        reasons.append(
+            "Se recomienda descanso y control del estrés porque hay señales leves de ansiedad que podrían aumentar si no se atienden."
+        )
+    elif gad7_score <= 14:
+        reasons.append(
+            "Se recomienda seguimiento porque el nivel de ansiedad puede afectar el descanso, la concentración y el bienestar general."
+        )
+    else:
+        reasons.append(
+            "Se recomienda valoración profesional porque el puntaje de ansiedad es elevado y puede representar afectación emocional importante."
+        )
+
+    if cognitive_score >= 80:
+        reasons.append(
+            "Se recomienda mantener buenos hábitos de sueño y concentración porque el rendimiento cognitivo fue adecuado."
+        )
+    elif cognitive_score >= 60:
+        reasons.append(
+            "Se recomienda reducir distracciones y repetir la evaluación porque hubo señales leves de dificultad cognitiva."
+        )
+    else:
+        reasons.append(
+            "Se recomienda seguimiento cuidadoso porque el rendimiento cognitivo fue bajo durante la prueba."
+        )
+
+    reasons.append(
+        "Se recomienda registrar cambios en el historial para comparar la evolución del paciente en futuras evaluaciones."
+    )
+
+    reasons.append(
+        "Estas recomendaciones son orientativas y no reemplazan una valoración profesional."
+    )
+
+    return reasons
+def generate_result_reasons_from_summary(summary):
+    """
+    Genera razones explicativas del resultado general.
+    Usa los datos ya calculados del summary.
+    """
+    reasons = []
+
+    general_state = str(summary.get("general_state", "")).lower()
+    scores = summary.get("scores", {})
+
+    gad7 = scores.get("gad7", 0)
+    cognitive = scores.get("cognitive", 0)
+
+    # Razón por ansiedad GAD-7
+    if gad7 is not None:
+        if gad7 <= 4:
+            reasons.append(
+                f"El puntaje GAD-7 fue {gad7}, lo que indica ansiedad mínima o leve."
+            )
+        elif gad7 <= 9:
+            reasons.append(
+                f"El puntaje GAD-7 fue {gad7}, lo que indica señales leves a moderadas de ansiedad."
+            )
+        elif gad7 <= 14:
+            reasons.append(
+                f"El puntaje GAD-7 fue {gad7}, lo que indica ansiedad moderada y necesidad de observación."
+            )
+        else:
+            reasons.append(
+                f"El puntaje GAD-7 fue {gad7}, lo que indica ansiedad elevada y posible necesidad de valoración profesional."
+            )
+
+    # Razón por prueba cognitiva
+    if cognitive is not None:
+        if cognitive >= 80:
+            reasons.append(
+                f"El puntaje cognitivo fue {cognitive}, indicando rendimiento adecuado en atención y concentración."
+            )
+        elif cognitive >= 60:
+            reasons.append(
+                f"El puntaje cognitivo fue {cognitive}, indicando posibles dificultades leves de atención."
+            )
+        else:
+            reasons.append(
+                f"El puntaje cognitivo fue {cognitive}, indicando dificultad importante en el rendimiento cognitivo."
+            )
+
+    # Razón del estado general
+    if "leve" in general_state:
+        reasons.append(
+            "El resultado se clasificó como riesgo leve porque no se detectaron señales críticas, aunque se recomienda seguimiento básico."
+        )
+    elif "moderado" in general_state:
+        reasons.append(
+            "El resultado se clasificó como riesgo moderado porque existen señales que requieren mayor observación y control."
+        )
+    elif "alto" in general_state or "grave" in general_state:
+        reasons.append(
+            "El resultado se clasificó como riesgo alto porque se detectaron señales importantes que requieren atención cuidadosa."
+        )
+    else:
+        reasons.append(
+            "El resultado general fue calculado a partir de los datos emocionales, cognitivos y del análisis de la sesión."
+        )
+
+    return reasons
+
+
+def generate_recommendation_reasons_from_summary(summary):
+    """
+    Genera razones de por qué se recomiendan ciertas acciones.
+    """
+    reasons = []
+
+    scores = summary.get("scores", {})
+    gad7 = scores.get("gad7", 0)
+    cognitive = scores.get("cognitive", 0)
+
+    if gad7 is not None:
+        if gad7 <= 4:
+            reasons.append(
+                "Se recomienda mantener observación porque, aunque la ansiedad es baja, el estado emocional puede cambiar durante el día."
+            )
+        elif gad7 <= 9:
+            reasons.append(
+                "Se recomienda descanso y control del estrés porque existen señales leves de ansiedad."
+            )
+        elif gad7 <= 14:
+            reasons.append(
+                "Se recomienda seguimiento porque la ansiedad moderada puede afectar el sueño, la concentración y el bienestar general."
+            )
+        else:
+            reasons.append(
+                "Se recomienda valoración profesional porque el nivel de ansiedad registrado es elevado."
+            )
+
+    if cognitive is not None:
+        if cognitive >= 80:
+            reasons.append(
+                "Se recomienda mantener buenos hábitos de sueño, concentración e hidratación porque el rendimiento cognitivo fue adecuado."
+            )
+        elif cognitive >= 60:
+            reasons.append(
+                "Se recomienda reducir distracciones y repetir la evaluación porque hubo señales leves de dificultad cognitiva."
+            )
+        else:
+            reasons.append(
+                "Se recomienda seguimiento cuidadoso porque el rendimiento cognitivo fue bajo durante la prueba."
+            )
+
+    reasons.append(
+        "Se recomienda registrar cambios importantes para comparar la evolución del paciente en futuras evaluaciones."
+    )
+
+    reasons.append(
+        "Estas recomendaciones son orientativas y no reemplazan una valoración profesional."
+    )
+
+    return reasons

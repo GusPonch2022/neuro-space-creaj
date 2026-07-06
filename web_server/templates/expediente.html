@@ -38,6 +38,7 @@
         {% if patient %}
             <div class="grid">
 
+                <!-- DATOS PRINCIPALES -->
                 <div class="panel">
                     <h2>Datos principales</h2>
 
@@ -53,6 +54,7 @@
                     {% endif %}
                 </div>
 
+                <!-- RESULTADOS -->
                 <div class="panel">
                     <h2>Resultados</h2>
 
@@ -62,7 +64,9 @@
                                 <div class="label">{{ item.label }}</div>
 
                                 {% if item.value is mapping %}
-                                    <div class="value"><pre>{{ item.value | json_pretty }}</pre></div>
+                                    <div class="value">
+                                        <pre>{{ item.value | json_pretty }}</pre>
+                                    </div>
                                 {% elif item.value is iterable and item.value is not string %}
                                     <div class="value">
                                         <ul class="mini-list">
@@ -81,6 +85,7 @@
                     {% endif %}
                 </div>
 
+                <!-- RECOMENDACIONES -->
                 <div class="panel full">
                     <h2>Recomendaciones</h2>
 
@@ -95,6 +100,33 @@
                     {% endif %}
                 </div>
 
+                <!-- RAZONES DEL RESULTADO -->
+                {% if patient.get("result_reasons") %}
+                    <div class="panel full">
+                        <h2>Razones del resultado</h2>
+
+                        <ul>
+                            {% for reason in patient.get("result_reasons") %}
+                                <li>{{ reason }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <!-- RAZONES DE LAS RECOMENDACIONES -->
+                {% if patient.get("recommendation_reasons") %}
+                    <div class="panel full">
+                        <h2>Razones de las recomendaciones</h2>
+
+                        <ul>
+                            {% for reason in patient.get("recommendation_reasons") %}
+                                <li>{{ reason }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <!-- ANÁLISIS Y RESUMEN -->
                 <div class="panel full">
                     <h2>Análisis y resumen</h2>
 
@@ -120,6 +152,8 @@
                         <p class="empty">No hay análisis adicional registrado.</p>
                     {% endif %}
                 </div>
+
+                <!-- QR -->
                 <div class="panel full qr-section">
                     <h2>Consulta tus resultados en línea</h2>
 
@@ -127,16 +161,18 @@
                         Escanea este QR desde tu celular e ingresa con tu expediente y código de acceso.
                     </p>
 
-<img
-    src="{{ url_for('neuro_qr') }}"
-    alt="QR Neuro Space CREA-J"
-    class="qr-image"
->
+                    <img
+                        src="{{ url_for('neuro_qr') }}"
+                        alt="QR Neuro Space CREA-J"
+                        class="qr-image"
+                    >
 
                     <p class="qr-link">
                         https://neuro-space-creaj.onrender.com
                     </p>
-                </div>                
+                </div>
+
+                <!-- HISTORIAL DEL PACIENTE -->
                 <div class="panel full">
                     <h2>Historial del paciente</h2>
 
@@ -173,6 +209,7 @@
 
                                 {% if item.get("analysis") %}
                                     <h3>Análisis</h3>
+
                                     {% if item.get("analysis") is iterable and item.get("analysis") is not string %}
                                         <ul>
                                             {% for line in item.get("analysis") %}
@@ -193,6 +230,24 @@
                                     </ul>
                                 {% endif %}
 
+                                {% if item.get("result_reasons") %}
+                                    <h3>Razones del resultado</h3>
+                                    <ul>
+                                        {% for reason in item.get("result_reasons") %}
+                                            <li>{{ reason }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                                {% if item.get("recommendation_reasons") %}
+                                    <h3>Razones de las recomendaciones</h3>
+                                    <ul>
+                                        {% for reason in item.get("recommendation_reasons") %}
+                                            <li>{{ reason }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
                                 {% if item.get("conclusion") %}
                                     <h3>Conclusión</h3>
                                     <p>{{ item.get("conclusion") }}</p>
@@ -203,7 +258,7 @@
                         <p class="empty">No hay historial detallado para este expediente todavía.</p>
                     {% endif %}
                 </div>
-                
+
             </div>
         {% endif %}
 

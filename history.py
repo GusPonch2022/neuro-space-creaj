@@ -7,8 +7,12 @@ import json
 import os
 from datetime import datetime
 
-from summary import generate_patient_summary, build_summary_text
-
+from summary import (
+    generate_patient_summary,
+    build_summary_text,
+    generate_result_reasons_from_summary,
+    generate_recommendation_reasons_from_summary,
+)
 
 DATA_DIR = "data"
 HISTORY_FILE = os.path.join(DATA_DIR, "history.json")
@@ -136,18 +140,20 @@ def save_patient_record(session_data):
     summary_text = build_summary_text(summary)
 
     record = {
-        "patient_number": summary["patient_number"],
-        "case_code": summary["case_code"],
-        "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "general_state": summary["general_state"],
-        "scores": summary["scores"],
-        "alerts": summary["alerts"],
-        "analysis": summary["analysis"],
-        "recommendations": summary["recommendations"],
-        "conclusion": summary["conclusion"],
-        "summary_text": summary_text,
-        "raw_session": session_data,
-    }
+    "patient_number": summary["patient_number"],
+    "case_code": summary["case_code"],
+    "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "general_state": summary["general_state"],
+    "scores": summary["scores"],
+    "alerts": summary["alerts"],
+    "analysis": summary["analysis"],
+    "recommendations": summary["recommendations"],
+    "result_reasons": generate_result_reasons_from_summary(summary),
+    "recommendation_reasons": generate_recommendation_reasons_from_summary(summary),
+    "conclusion": summary["conclusion"],
+    "summary_text": summary_text,
+    "raw_session": session_data,
+}
 
     history = load_history()
 
@@ -203,25 +209,35 @@ def _patient_access_to_history_record(patient):
         return history_record
 
     # Si no existe history_record interno, crear uno básico
+    summary_temp = {
+    "general_state": general_state,
+    "scores": {
+        "gad7": results.get("gad7_score"),
+        "cognitive": results.get("cognitive_score"),
+    },
+}
+    
     record = {
-        "patient_number": patient_number,
-        "case_code": case_code,
-        "date": date,
-        "general_state": general_state,
-        "scores": {
-            "gad7": results.get("gad7_score"),
-            "cognitive": results.get("cognitive_score"),
-        },
-        "alerts": [],
-        "analysis": [
-            patient.get("analysis", "Sin análisis registrado.")
-        ],
-        "recommendations": patient.get("recommendations", []),
-        "conclusion": patient.get("conclusion", ""),
-        "summary_text": "",
-        "raw_session": raw_session,
-        "verification_code": patient.get("verification_code"),
-    }
+    "patient_number": patient_number,
+    "case_code": case_code,
+    "date": date,
+    "general_state": general_state,
+    "scores": {
+        "gad7": results.get("gad7_score"),
+        "cognitive": results.get("cognitive_score"),
+    },
+    "alerts": [],
+    "analysis": [
+        patient.get("analysis", "Sin análisis registrado.")
+    ],
+    "recommendations": patient.get("recommendations", []),
+    "result_reasons": generate_result_reasons_from_summary(summary_temp),
+    "recommendation_reasons": generate_recommendation_reasons_from_summary(summary_temp),
+    "conclusion": patient.get("conclusion", ""),
+    "summary_text": "",
+    "raw_session": raw_session,
+    "verification_code": patient.get("verification_code"),
+}
 
     return record
 
