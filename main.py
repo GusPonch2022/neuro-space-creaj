@@ -13,5 +13,5 @@ if __name__ == "__main__":
 #python web_server/server.py
 
 #git add .
-#it commit -m "Actualizar expedientes de prueba"
+#git commit -m "Actualizar pacientes"
 #git push
