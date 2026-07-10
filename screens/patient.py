@@ -490,8 +490,7 @@ def show_patient_screen(engine):
             f"Paciente número {patient_number}.",
             "La evaluación comenzará ahora.",
             "Responde cada pregunta con calma.",
-            "La voz de JARVIS se adaptará al ritmo de la pantalla.",
-        ],
+        "JARVIS hablará solo en botones, accesos y resultado final.",        ],
         "COMENZAR",
     )
 
@@ -503,19 +502,16 @@ def show_patient_screen(engine):
         "cognitive": None,
     }
 
-    originals = _make_patient_voice_interruptible(engine)
+    # Durante preguntas NO se usa voz.
+    # Las preguntas solo se muestran en pantalla.
 
-    try:
-        session_result["intake"] = run_intake(engine, voice_fn=_voice_say)
+    session_result["intake"] = run_intake(engine)
 
-        _voice_stop(engine)
+    _voice_stop(engine)
 
-        session_result["gad7"] = run_gad7(engine, voice_fn=_voice_say)
+    session_result["gad7"] = run_gad7(engine)
 
-        _voice_stop(engine)
-
-    finally:
-        _restore_patient_voice(engine, originals)
+    _voice_stop(engine) 
 
     session_result["cognitive"] = run_color_attention_test(engine, rounds=8)
 

@@ -81,7 +81,7 @@ def run_color_attention_test(engine, rounds=8):
     show_message(
         engine,
         "PRUEBA DE ATENCIÓN",
-        "Selecciona el color indicado por JARVIS.",
+        "Selecciona el color indicado en la pantalla.",
         2,
     )
 
@@ -115,11 +115,6 @@ def run_color_attention_test(engine, rounds=8):
         target = random.choice(color_names)
         selected = None
 
-        if hasattr(engine, "voice") and engine.voice:
-            engine.voice.say(
-                f"Selecciona {target.lower()}.",
-                urgent=True
-            )
 
         round_start = time.time()
 
@@ -175,11 +170,11 @@ def run_color_attention_test(engine, rounds=8):
         if selected == target:
             correct += 1
 
-            if hasattr(engine, "voice") and engine.voice:
-                engine.voice.say(
-                    "Correcto.",
-                    urgent=True,
-                )
+           # if hasattr(engine, "voice") and engine.voice:
+          #      engine.voice.say(
+          #          "Correcto.",
+             #       urgent=True,
+            #    )
 
             show_message(
                 engine,
@@ -191,11 +186,11 @@ def run_color_attention_test(engine, rounds=8):
         else:
             errors += 1
 
-            if hasattr(engine, "voice") and engine.voice:
-                engine.voice.say(
-                    "Incorrecto.",
-                    urgent=True,
-                )
+          #  if hasattr(engine, "voice") and engine.voice:
+           #     engine.voice.say(
+           #         "Incorrecto.",
+          #          urgent=True,
+           #     )
 
             show_message(
                 engine,
@@ -229,12 +224,12 @@ def run_color_attention_test(engine, rounds=8):
         "level": level,
     }
 
-    if hasattr(engine, "voice") and engine.voice:
-        engine.voice.say(
-            f"Prueba de atención finalizada. "
-            f"Aciertos: {correct} de {total}. "
-            f"Resultado: {level}."
-        )
+   #  if hasattr(engine, "voice") and engine.voice:
+   #      engine.voice.say(
+   #          f"Prueba de atención finalizada. "
+   #          f"Aciertos: {correct} de {total}. "
+   #          f"Resultado: {level}."
+   #      )
 
     show_cognitive_results(engine, results)
 
